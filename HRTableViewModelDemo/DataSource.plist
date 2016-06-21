@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SportList</key>
+	<array>
+		<string>Footerball</string>
+		<string>Swimming</string>
+		<string>Badminton</string>
+	</array>
+	<key>UserInfo</key>
+	<dict>
+		<key>name</key>
+		<string>Xiao Ming</string>
+		<key>age</key>
+		<string>12岁</string>
+		<key>height</key>
+		<string>140cm</string>
+		<key>desc</key>
+		<string>两岁开始看央视《新闻联播》、7岁开始每天读《人民日报》和《参考消息》，佩戴着全国罕见的“五道杠”。为了‘中华民族之复兴，续写汉唐之盛世’的修身齐家、济世安邦之信念、气度、襟怀、理想和抱负毅然决然地肩负起了五道杠的职责！</string>
+	</dict>
+	<key>FavoriteFoodList</key>
+	<array>
+		<string>Meat</string>
+		<string>Apple</string>
+		<string>Coca-Cola</string>
+		<string>Potato Crisps</string>
+	</array>
+</dict>
+</plist>
