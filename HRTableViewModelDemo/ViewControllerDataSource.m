@@ -23,33 +23,36 @@ typedef NS_ENUM(NSUInteger, ViewControllerSectionType) {
 @property (nonatomic, strong) NSDictionary *dataDic;
 @property (nonatomic, strong) NSArray *sectionTypeArray;
 @property (nonatomic, strong) NSMutableArray <HRTableViewModel *> *sectionModelArray;
+@property (nonatomic, weak) id delegate;
 @end
 
 @implementation ViewControllerDataSource
 
 #pragma mark - Config CellModelArray
-- (NSArray <HRTableViewCellModel *> *)reformDataToSectionModelArray:(id)data {
-    [self.sectionModelArray removeAllObjects];
-    self.dataDic = (NSDictionary *)data;
-    for (NSNumber *type in self.sectionTypeArray) {
++ (NSArray <HRTableViewCellModel *> *)reformDataToSectionModelArray:(id)data delegate:(id)delegate {
+    ViewControllerDataSource *dataSource = [[ViewControllerDataSource alloc] init];
+    dataSource.delegate = delegate;
+    [dataSource.sectionModelArray removeAllObjects];
+    dataSource.dataDic = (NSDictionary *)data;
+    for (NSNumber *type in dataSource.sectionTypeArray) {
         switch (type.integerValue) {
             case ViewControllerSectionTypeUser: {
-                [self configUserCellModel];
+                [dataSource configUserCellModel];
             }
                 break;
             case ViewControllerSectionTypeSport: {
-                [self configSportCellModel];
+                [dataSource configSportCellModel];
             }
                 break;
             case ViewControllerSectionTypeFavortiteFood: {
-                [self configFavoriteFoodCellModel];
+                [dataSource configFavoriteFoodCellModel];
             }
                 break;
             default:
                 break;
         }
     }
-    return [self.sectionModelArray copy];
+    return [dataSource.sectionModelArray copy];
 }
 
 #pragma mark UserCellModel

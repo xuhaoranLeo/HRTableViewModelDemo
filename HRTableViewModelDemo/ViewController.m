@@ -100,9 +100,7 @@
     if (_sectionModelArray == nil) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"DataSource" ofType:@"plist"];
         NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:path];
-        ViewControllerDataSource *dataSource = [[ViewControllerDataSource alloc] init];
-        dataSource.delegate = self;
-        _sectionModelArray = [dataSource reformDataToSectionModelArray:data];
+        _sectionModelArray = [ViewControllerDataSource reformDataToSectionModelArray:data delegate:self];
     }
     return _sectionModelArray;
 }

@@ -10,6 +10,5 @@
 #import "HRTableViewModel.h"
 
 @interface ViewControllerDataSource : NSObject
-- (NSArray <HRTableViewModel *> *)reformDataToSectionModelArray:(id)data;
-@property (nonatomic, weak) id delegate;
++ (NSArray <HRTableViewModel *> *)reformDataToSectionModelArray:(id)data delegate:(id)delegate;
 @end
